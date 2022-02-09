@@ -1196,7 +1196,7 @@ public class Trime extends LifecycleInputMethodService {
           if (imeConfig.getClipboardLimit() != 0) {
             ClipData clipData = clipBoard.getPrimaryClip();
             if (clipData == null) return;
-            if (clipData.getItemCount()>0)
+            if (clipData.getItemCount()<0) return;
             ClipData.Item item = clipData.getItemAt(0);
             if (item == null) return;
 
