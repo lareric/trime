@@ -22,6 +22,7 @@ import static android.graphics.Color.parseColor;
 
 import android.app.Dialog;
 import android.content.ClipData;
+import  	android.content.ClipData.Item;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
