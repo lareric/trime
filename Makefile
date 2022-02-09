@@ -17,6 +17,7 @@ release: opencc-data spotless
 	./gradlew assembleRelease
 
 spotless:
+	./gradlew spotlessApply
 	./gradlew spotlessCheck
 
 debug:
