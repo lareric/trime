@@ -1188,18 +1188,18 @@ public class Trime extends LifecycleInputMethodService {
    */
   private void clipBoardMonitor() {
     ClipboardDao.get();
-     ClipboardManager clipBoard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
-     Config imeConfig = getImeConfig();
+    ClipboardManager clipBoard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+    Config imeConfig = getImeConfig();
     clipBoard.addPrimaryClipChangedListener(
         () -> {
           if (imeConfig.getClipboardLimit() != 0) {
-             ClipData clipData = clipBoard.getPrimaryClip();
+            ClipData clipData = clipBoard.getPrimaryClip();
             if (clipData == null) return;
-             ClipData.Item item = clipData.getItemAt(0);
+            ClipData.Item item = clipData.getItemAt(0);
             if (item == null) return;
 
-             String rawText = item.coerceToText(self).toString();
-             String filteredText =
+            String rawText = item.coerceToText(self).toString();
+            String filteredText =
                 StringUtils.replace(rawText, imeConfig.getClipBoardCompare());
             if (filteredText.length() < 1 || filteredText.equals(ClipBoardString)) return;
 
