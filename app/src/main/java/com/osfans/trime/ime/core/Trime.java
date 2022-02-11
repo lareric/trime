@@ -22,7 +22,7 @@ import static android.graphics.Color.parseColor;
 
 import android.app.Dialog;
 import android.content.ClipData;
-import  	android.content.ClipData.Item;
+import  android.content.ClipData.Item;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
@@ -1196,7 +1196,7 @@ public class Trime extends LifecycleInputMethodService {
           if (imeConfig.getClipboardLimit() != 0) {
             ClipData clipData = clipBoard.getPrimaryClip();
             if (clipData == null) return;
-            if (clipData.getItemCount()<0) return;
+            if (clipData.getItemCount()<=0) return;
             ClipData.Item item = clipData.getItemAt(0);
             if (item == null) return;
 
