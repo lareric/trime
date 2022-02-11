@@ -1194,23 +1194,23 @@ public class Trime extends LifecycleInputMethodService {
     clipBoard.addPrimaryClipChangedListener(
         () -> {
           return;
-          if (imeConfig.getClipboardLimit() != 0) {
-            ClipData clipData = clipBoard.getPrimaryClip();
-            if (clipData == null) return;
-            if (clipData.getItemCount()<=0) return;
-            ClipData.Item item = clipData.getItemAt(0);
-            if (clipData.getItemAt(0) == null) return;
+          // if (imeConfig.getClipboardLimit() != 0) {
+          //   ClipData clipData = clipBoard.getPrimaryClip();
+          //   if (clipData == null) return;
+          //   if (clipData.getItemCount()<=0) return;
+          //   ClipData.Item item = clipData.getItemAt(0);
+          //   if (clipData.getItemAt(0) == null) return;
 
-            String rawText = item.coerceToText(self).toString();
-            String filteredText =
-                StringUtils.replace(rawText, imeConfig.getClipBoardCompare());
-            if (filteredText.length() < 1 || filteredText.equals(ClipBoardString)) return;
+          //   String rawText = item.coerceToText(self).toString();
+          //   String filteredText =
+          //       StringUtils.replace(rawText, imeConfig.getClipBoardCompare());
+          //   if (filteredText.length() < 1 || filteredText.equals(ClipBoardString)) return;
 
-            if (StringUtils.mismatch(rawText, imeConfig.getClipBoardOutput())) {
-              ClipBoardString = filteredText;
-              liquidKeyboard.addClipboardData(rawText);
-            }
-          }
+          //   if (StringUtils.mismatch(rawText, imeConfig.getClipBoardOutput())) {
+          //     ClipBoardString = filteredText;
+          //     liquidKeyboard.addClipboardData(rawText);
+          //   }
+          // }
         });
   }
 
